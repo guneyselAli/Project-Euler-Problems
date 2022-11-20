@@ -1,0 +1,53 @@
+import time
+
+start = time.time()
+
+importtriangle="""75
+95 64
+17 47 82
+18 35 87 10
+20 04 82 47 65
+19 01 23 75 03 34
+88 02 77 73 07 63 67
+99 65 04 28 06 16 70 92
+41 41 26 56 83 40 80 70 33
+41 48 72 33 47 32 37 16 94 29
+53 71 44 65 25 43 91 52 97 51 14
+70 11 33 28 77 73 17 78 39 68 17 57
+91 71 52 38 17 14 91 43 58 50 27 29 48
+63 66 04 68 89 53 67 30 73 16 69 87 40 31
+04 62 98 27 23 09 70 98 73 93 38 53 60 04 23"""
+
+
+
+
+listoftrianglestr=importtriangle.split('\n')  #creates a list of strings for every row in triangle
+
+listoftriangleint=[] # we are going to use this later for converting strings into integers
+
+for row in listoftrianglestr:  #converting every string numbers into integers
+	listofrow=row.split()   #for the current row it creates a list of string numbers
+	for i in range(0,len(listofrow)): 
+		listofrow[i]=int(listofrow[i])
+	listoftriangleint.append(listofrow)
+	
+sum_list = []
+
+#I solved it by brute force but there is better version to calculate this problem.
+#Which is starting by bottom row and go up with max numbers.
+def sumnext(value_list, sum_list, x, y, summary):
+	summary += value_list[x][y]
+	if x == 14:
+		return summary
+	x += 1
+	sum_list.append(sumnext(value_list , sum_list, x, y, summary))
+	sum_list.append(sumnext(value_list , sum_list, x, y+1, summary))
+
+sumnext(listoftriangleint, sum_list, 0, 0, 0)
+new_list = []
+for i in sum_list:
+	if i != None:
+		new_list.append(i)
+
+print(f"Maximum sum is: {max(new_list)}\n")
+print(f"Elapsed time: {time.time() - start} seconds")
