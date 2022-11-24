@@ -1,6 +1,6 @@
 #Maximum number can be written with the sum of its digit's factorials is 9999999 (ten million)
 #Its a total brute force and takes a lot of time.
-#But I couldnt come up with differen idea to find the upper limit.
+#But I couldnt come up with different idea to find the upper limit.
 
 limit = 362880 * 7 #9! = 362880
 
