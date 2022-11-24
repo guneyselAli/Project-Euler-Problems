@@ -1,6 +1,6 @@
-#This problem solved with total brute force
+#This problem solved with total brute force.
 #There are way more clever solutions out there.
-#But since this the only soluton I came up with at my first try
+#But since this is the only solution I came up with at my first try,
 #I wanted to post this one.
 possibilities = 0
 count = 0
