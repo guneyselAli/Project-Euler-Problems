@@ -34,3 +34,4 @@ while True:
 
 et = time.time()
 print((et - st)*1000)
+#Its the fastest solution I have come up with
